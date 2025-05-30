@@ -1,0 +1,8 @@
+prefix=/root/yahboomcar_ws/devel
+
+Name: arm_autopilot
+Description: Description of arm_autopilot
+Version: 0.0.0
+Cflags: -I/root/yahboomcar_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: 
