@@ -1,8 +1,0 @@
-prefix=/root/yahboomcar_ws/install
-
-Name: yahboomcar_slam
-Description: Description of yahboomcar_slam
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

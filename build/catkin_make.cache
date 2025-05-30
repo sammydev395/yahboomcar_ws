@@ -1,2 +1,0 @@
-arm_autopilot:arm_color_transport:arm_mediapipe:arm_moveit_demo:garbage_identify_yolov11:joy:x3plus_moveit_config:yahboomcar_astra:yahboomcar_bringup:yahboomcar_ctrl:yahboomcar_description:yahboomcar_laser:yahboomcar_linefollw:yahboomcar_mediapipe:yahboomcar_msgs:yahboomcar_multi:yahboomcar_nav:yahboomcar_slam:yahboomcar_visual:yahboomcar_voice_ctrl
--DCATKIN_DEVEL_PREFIX=/root/yahboomcar_ws/devel -DCMAKE_INSTALL_PREFIX=/root/yahboomcar_ws/install -G Unix Makefiles
