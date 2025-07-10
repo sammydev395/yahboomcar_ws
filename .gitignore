@@ -25,3 +25,53 @@ __pycache__/
 # Temporary files
 *~
 
+
+# Build directories
+build/
+devel/
+install/
+*.o
+*.so
+*.a
+*.dylib
+
+# CMake files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.swp
+*~
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Large data files that shouldn't be in git
+*.pcd
+*.bag
+*.db
+*.sqlite
+
+# Model training files
+runs/
+checkpoints/
+*.ckpt
