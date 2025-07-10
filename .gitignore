@@ -1,0 +1,27 @@
+# ROS specific
+build/
+devel/
+logs/
+.catkin_workspace
+
+# Python
+*.pyc
+__pycache__/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS specific
+.DS_Store
+.directory
+
+# Compiled files
+*.o
+*.so
+*.dylib
+
+# Temporary files
+*~
+

@@ -1,0 +1,29 @@
+<launch>
+    <arg name="orb_slam_type" default="mono" doc="orb_slam_type [mono,monoAR,rgbd]"/>
+    
+    <!-- Always use Astra camera driver -->
+    <include file="$(find orbbec_camera)/launch/astraproplus.launch"/>
+    
+    <!-- Image viewer for debugging -->
+    <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
+        <remap from="image" to="/camera/rgb/image_raw"/>
+        <param name="autosize" value="true" />
+    </node>
+    
+    <node pkg="orb_slam2" type="MonoAR" name="ORB_SLAM2" output="screen"
+          args="$(find yahboomcar_slam)/param/ORBvoc.txt $(find yahboomcar_slam)/param/astra.yaml" 
+           if="$(eval arg('orb_slam_type') == 'monoAR')" >
+        <remap from="/camera/image_raw" to="/camera/rgb/image_raw"/>
+    </node>
+    <node pkg="orb_slam2" type="Mono" name="ORB_SLAM2" output="screen"
+          args="$(find yahboomcar_slam)/param/ORBvoc.txt $(find yahboomcar_slam)/param/astra.yaml" 
+           if="$(eval arg('orb_slam_type') == 'mono')" >
+        <remap from="/camera/image_raw" to="/camera/rgb/image_raw"/>
+    </node>
+    <node pkg="orb_slam2" type="RGBD" name="ORB_SLAM2" output="screen"
+          args="$(find yahboomcar_slam)/param/ORBvoc.txt $(find yahboomcar_slam)/param/astra.yaml"
+          if="$(eval arg('orb_slam_type') == 'rgbd')" >
+        <remap from="/camera/depth_registered/image_raw" to="/camera/depth/image_raw"/>
+        <remap from="/camera/rgb/image_raw" to="/camera/rgb/image_raw"/>
+    </node>
+</launch>
